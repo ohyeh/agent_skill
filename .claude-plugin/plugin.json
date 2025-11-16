@@ -2,8 +2,10 @@
   "name": "agent-skill",
   "version": "1.0.0",
   "description": "A collection of Claude skills for enhanced AI-assisted development workflows, including the Codex skill for advanced code analysis and refactoring.",
-  "author": "ohyeh",
+  "author": {
+    "name": "ohyeh"
+  },
   "skills": [
-    "skills/codex"
+    "./skills/codex"
   ]
 }
