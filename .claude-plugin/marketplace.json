@@ -1,0 +1,13 @@
+{
+  "name": "agent-skill-marketplace",
+  "owner": {
+    "name": "ohyeh"
+  },
+  "plugins": [
+    {
+      "name": "agent-skill",
+      "source": "./",
+      "description": "A collection of Claude skills for enhanced AI-assisted development workflows, including the Codex skill for advanced code analysis and refactoring."
+    }
+  ]
+}

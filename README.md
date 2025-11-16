@@ -4,17 +4,33 @@ A collection of Claude skills for enhanced AI-assisted development workflows.
 
 ## Installation
 
-This is a Claude Code plugin. Install it via the Marketplace:
+This repository serves as both a Claude Code plugin and a marketplace. You have multiple installation options:
+
+### Option 1: Via Marketplace (Recommended)
 
 ```bash
+# Add this repository as a marketplace
 /plugin marketplace add https://github.com/ohyeh/agent_skill.git
+
+# Install the agent-skill plugin
 /plugin install agent-skill@main
 ```
 
-Or clone it directly:
+### Option 2: Direct Plugin Installation
 
 ```bash
+# Install directly without using marketplace
+/plugin install agent-skill@main --source https://github.com/ohyeh/agent_skill.git
+```
+
+### Option 3: Local Development
+
+```bash
+# Clone the repository
 git clone https://github.com/ohyeh/agent_skill.git
+
+# Link it locally in Claude Code
+/plugin link /path/to/agent_skill
 ```
 
 ## Skills
@@ -55,7 +71,8 @@ After installation, reference the skill name in your Claude Code requests:
 ```
 agent_skill/
 ├── .claude-plugin/
-│   └── plugin.json       # Plugin configuration
+│   ├── plugin.json       # Plugin configuration
+│   └── marketplace.json  # Marketplace configuration (dual-purpose repo)
 ├── skills/
 │   └── codex/
 │       ├── SKILL.md      # Skill implementation guide
@@ -64,7 +81,13 @@ agent_skill/
 └── README.md             # This file
 ```
 
+This repository is configured as a **dual-purpose repository**, containing both:
+- **Plugin configuration** (`plugin.json`) - allows direct installation as a plugin
+- **Marketplace configuration** (`marketplace.json`) - allows use as a marketplace that lists this plugin
+
 ## Development
+
+### Adding New Skills
 
 To add new skills to this plugin:
 
@@ -72,6 +95,17 @@ To add new skills to this plugin:
 2. Add a `SKILL.md` file with the skill definition
 3. Update `.claude-plugin/plugin.json` to include the new skill path
 4. Update this README with the skill description
+
+### Extending as Marketplace
+
+To add more plugins to this marketplace:
+
+1. Add the plugin entry to `.claude-plugin/marketplace.json`
+2. Specify the plugin's `name`, `source`, and `description`
+3. The `source` can be:
+   - `"./"` for plugins in this repository
+   - A URL to another GitHub repository
+   - A local path for development
 
 ## License
 
